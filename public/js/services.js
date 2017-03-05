@@ -1,7 +1,7 @@
 'use strict'
 angular.module('kiddsapp.services', [])
 .constant('my_config', {
-    baseUrl: 'http://localhost:3000/',
+    baseUrl: 'https://kids-school.herokuapp.com/',
     modalOpen: false
 })
 .factory('newsFactory', ['$resource', 'my_config', 'userFactory', function($resource, my_config, userFactory){
