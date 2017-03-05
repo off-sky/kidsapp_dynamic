@@ -49,7 +49,7 @@
                       <div class="form-group row">
                         <label for="text" class="col-xs-2 col-form-label">Новина</label>
                           <div class="col-xs-10">
-                            <textarea class="form-control" id="newsText" id="newsText" rows="15" ng-model="newsToAdd.text" required></textarea>
+                            <textarea class="form-control" id="newsText" name="newsText" rows="15" ng-model="newsToAdd.text" required></textarea>
                           </div>
                     <div class="col-xs-10 col-xs-offset-2">
                          <span class="form-error-message" ng-show="(!newsAddForm.newsText.$pristine || newsAddForm.$submitted) && newsAddForm.newsText.$invalid">Так поспішали, що про новину й забули...</span>
