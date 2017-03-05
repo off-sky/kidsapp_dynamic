@@ -64,7 +64,7 @@
             <div class="form-group row">
                 <label for="text" class="col-xs-2 col-form-label">Коротка інформація: </label>
                   <div class="col-xs-10">
-                    <textarea class="form-control" id="text" rows="4" id="description" name="description" ng-model="editedTeacher.description"></textarea>
+                    <textarea class="form-control" id="text" rows="4" id="description" name="description" ng-model="editedTeacher.description" required></textarea>
                   </div>
                 <div class="col-xs-10 col-xs-offset-2">
                     <span class="form-error-message" ng-show="(!teacherEditForm.description.$pristine || teacherEditForm.$submitted) && teacherEditForm.description.$invalid">Це поле слід заповнити</span>
