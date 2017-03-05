@@ -285,9 +285,11 @@ angular.module('kiddsapp.controllers', [])
     $scope.closeModal = function(){
         $uibModalInstance.dismiss('Dismissed by user');
     }
+    $scope.postClicked = false;
     $scope.saveNews = function(){
         if (!($scope.newsToAdd.title && $scope.newsToAdd.title.length > 0) || !($scope.newsToAdd.author && $scope.newsToAdd.author.length > 0) || !($scope.newsToAdd.text && $scope.newsToAdd.text.length > 0)) {
             return;
+            $scope.postClicked = true;
         }
         var photoPreview = angular.element(document.querySelector('#img-preview'));
         var base64Image = photoPreview.attr('src');

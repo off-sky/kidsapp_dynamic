@@ -12,7 +12,7 @@
                         <input class="form-control" type="text" id="title" name="title" required ng-model="newsToAdd.title">
                       </div>
                      <div class="col-xs-10 col-xs-offset-2">
-                         <span class="form-error-message" ng-show="!newsAddForm.title.$pristine && newsAddForm.title.$invalid">Це поле слід заповнити</span>
+                         <span class="form-error-message" ng-show="(!newsAddForm.title.$pristine || postClicked) && newsAddForm.title.$invalid">Це поле слід заповнити</span>
                     </div>
                     </div>
                       <div class="form-group row">
