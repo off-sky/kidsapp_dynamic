@@ -56,7 +56,7 @@
                           <div class="col-xs-9 col-xs-offset-1">
                             <input class="form-control" type="text" id="username" name="username" ng-model="newUser.username" required>
                           </div>
-                        <div class="col-xs-9 col-xs-offset-2">
+                        <div class="col-xs-9 col-xs-offset-3">
                              <span class="form-error-message" ng-show="(!signInForm.username.$pristine || signInForm.$submitted) && signInForm.username.$invalid">Це поле слід заповнити</span>
                         </div> 
                         </div>
@@ -71,12 +71,18 @@
                           <div class="col-xs-9 col-xs-offset-1">
                             <input class="form-control" type="text" id="firstname" name="firstname" ng-model="newUser.firstName" required>
                           </div>
+                        <div class="col-xs-9 col-xs-offset-3">
+                             <span class="form-error-message" ng-show="(!signInForm.firstname.$pristine || signInForm.$submitted) && signInForm.firstname.$invalid">Це поле слід заповнити</span>
+                        </div> 
                         </div>
                         <div class="form-group row">
                           <label for="lastname" class="col-xs-2 col-form-label">Ваше прізвище</label>
                           <div class="col-xs-9 col-xs-offset-1">
                             <input class="form-control" type="text" id="lastname" name="lastname" ng-model="newUser.lastName" required>
                           </div>
+                        <div class="col-xs-9 col-xs-offset-3">
+                             <span class="form-error-message" ng-show="(!signInForm.lastname.$pristine || signInForm.$submitted) && signInForm.lastname.$invalid">Це поле слід заповнити</span>
+                        </div> 
                         </div>
                         <div class="form-group row">
                           <label for="position" class="col-xs-2 col-form-label">Посада</label>
@@ -89,6 +95,9 @@
                           <div class="col-xs-9 col-xs-offset-1">
                             <input class="form-control" type="password" id="password" name="password" ng-model="newUser.password">
                           </div>
+                            <div class="col-xs-9 col-xs-offset-3">
+                             <span class="form-error-message" ng-show="(!signInForm.password.$pristine || signInForm.$submitted) && signInForm.password.$invalid">Придумайте, будь ласка, пароль!</span>
+                        </div>
                         </div>
                         <div class="form-group row">
                           <label for="admincode" class="col-xs-5 col-form-label">Код для отримання прав адміністратора</label>
