@@ -870,6 +870,7 @@ angular.module('kiddsapp.controllers', [])
     }
     
     function currentLevelEmpty(){
+        if ($scope.testDetails.level > 2) return true;
         var empty = true;
         if (test.levels[$scope.testDetails.level].grammar.length != 0) empty = false;
         if (test.levels[$scope.testDetails.level].matchQuestions.length != 0) empty = false;
