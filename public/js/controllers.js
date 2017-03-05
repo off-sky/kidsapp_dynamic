@@ -650,10 +650,14 @@ angular.module('kiddsapp.controllers', [])
 .controller('addEventController', ['$uibModalInstance', '$scope', 'galleryFactory', function($uibModalInstance, $scope, galleryFactory){
     $scope.newEvent = {name:'', date: '', photos: []}
     $scope.postEvent = function(){
+       
        var photos = angular.element(document.querySelectorAll('.preview-image'));
        console.log('The following photos will be posted:');
        for (var i = 0; i < photos.length; i++) {
            $scope.newEvent.photos.push({ref: photos[i].src});
+       }
+       if (!($scope.newEvent.name && $scope.newEvent.name.length < 0) || !($scope.newEvent.date && $scope.newEvent.date.length < 0) || $scope.newEvent.photos.length < 3) {
+           return;
        }
        galleryFactory.galleryResource.postEvent($scope.newEvent);
        $uibModalInstance.close();
