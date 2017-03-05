@@ -1,0 +1,11 @@
+
+
+    <div class="gal-event" ng-repeat="event in gallery">
+        <div class="gal-description">
+            <a ui-sref="app.aboutus.event({eventId: event._id})"><h4>{{event.name}} <br><small>{{event.date}}</small></h4></a>
+            <button class="btn btn-danger btn-xs" ng-if="isAdmin()" ng-click="openEditEventModal(event._id)">Редагувати</button>
+        </div><br>
+        <div class="gal-photo" ng-repeat="photo in event.photos">
+            <a ui-sref="app.aboutus.photo({eventId: event._id, photoId: photo._id})"><img ng-src="{{photo.ref}}" class="gal-thumbnail"></a>
+        </div>                                 
+    </div>

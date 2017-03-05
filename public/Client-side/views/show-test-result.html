@@ -1,0 +1,49 @@
+<div class="modal-content" style="background-color:#88d6fa;">
+    <div class="modal-header">
+        <h3 class="modal-title">{{testDetails.test_name}} <button type="button" class="close" data-dismiss="modal" ng-click="closeModal()" aria-label="Close"><span aria-hidden="true">&times;</span></button></h3>
+    </div>
+    <div class="modal-body">
+            <div class="row">
+            <div class="col-xs-12">
+                <h4>{{testDetails.username}}</h4>
+                <h4>Дата: {{testDetails.date.getDate()+'.'+(testDetails.date.getMonth()+1)+'.'+testDetails.date.getFullYear()}}</h4>
+                <br><br><br>
+                <h2>Ваш рівень:</h2>
+                <h1>{{testDetails.level + ' - '+getTextLevel(testDetails.level)}}</h1>
+
+                <br><br><br>
+
+                <h2>Загальний результат:</h2>
+                <h1>{{testDetails.overallRating}}%</h1>
+
+                <br><br><br>
+
+                <h2>Результати за аспектами:</h2>
+
+                <h3>Граматика: {{testDetails.grammar.rating}}%</h3>
+                <h3>Лексика: {{testDetails.lexis.rating}}%</h3>
+                <h3>Читання: {{testDetails.reading.rating}}%</h3>
+                <h3>Слухання: {{testDetails.listening.rating}}%</h3>
+
+                <div ng-if="testDetails.recommendedGrammar.length > 0">
+                <h2>Радимо звернути увагу на такі граматичні теми:</h2>
+                <p>
+                    <ul>
+                        <li ng-repeat="topic in testDetails.recommendedGrammar">
+                            <h3>{{topic.name}}</h3>
+                        </li>
+                    </ul>
+                </div>
+
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-4 col-xs-4" style="padding-top:30px;">
+                <button class="btn btn-success" ng-click="closeModal()">Повернутись до тесту</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
