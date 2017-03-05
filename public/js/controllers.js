@@ -77,7 +77,9 @@ angular.module('kiddsapp.controllers', [])
                 userFactory.updateCurrentUser();
             }, function(err){
                 $scope.signInError = true;
-                $scope.signInErrorText = err;
+                if(err.data.err.name == "UserExistsError")
+                $scope.signInErrorText = "На жаль, користувач із таким іменем у нас вже є...";
+                signInForm.username.$invalid = true;
             })
     }
     
