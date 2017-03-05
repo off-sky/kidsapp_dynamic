@@ -5,12 +5,15 @@
     <div class="modal-body">
 <!--                  News add form-->
 
-                  <form novalidate name="newsAddForm">
+                  <form novalidate name="newsChangeForm">
                     <div class="form-group row">
                       <label for="title" class="col-xs-2 col-form-label">Заголовок:</label>
                       <div class="col-xs-10">
                         <input class="form-control" type="text" id="title" name="title" required ng-model="newsToChange.title">
                       </div>
+                        <div class="col-xs-10 col-xs-offset-2">
+                         <span class="form-error-message" ng-show="(!newsChangeForm.title.$pristine || newsChangeForm.$submitted) && newsChangeForm.title.$invalid">Це поле слід заповнити</span>
+                    </div>
                     </div>
                       <div class="form-group row">
                       <label for="title" class="col-xs-2 col-form-label">Фото:</label>
@@ -44,7 +47,7 @@
                       <div class="form-group row">
                         <label for="text" class="col-xs-2 col-form-label">Новина</label>
                           <div class="col-xs-10">
-                            <textarea class="form-control" id="text" rows="15" ng-model="newsToChange.text"></textarea>
+                            <textarea class="form-control" id="text" rows="15" ng-model="newsToChange.text" required></textarea>
                           </div>
                       </div>
                       <div class="form-group row">

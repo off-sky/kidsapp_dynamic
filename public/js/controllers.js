@@ -311,6 +311,9 @@ angular.module('kiddsapp.controllers', [])
     console.log('Changing news:');
     console.log($scope.newsToChange);
     $scope.saveChanges = function(){
+        if (!($scope.newsToChange.title && $scope.newsToChange.title.length > 0) || !($scope.newsToChange.author && $scope.newsToChange.author.length > 0) || !($scope.newsToChange.text && $scope.newsToChange.text.length > 0)) {
+            return
+        }
         var photoPreview = angular.element(document.querySelector('#img-preview'));
         var base64Image = photoPreview.attr('src');
         console.log('The following base64 string will be written to the server: ');
