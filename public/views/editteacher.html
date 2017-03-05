@@ -33,12 +33,18 @@
           <div class="col-xs-10">
             <input class="form-control" type="text" id="firstname" name="firstname" required ng-model="editedTeacher.firstName">
           </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherEditForm.firstname.$pristine || teacherEditForm.$submitted) && teacherEditForm.firstname.$invalid">Це поле слід заповнити</span>
+            </div>
         </div>
         <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Посада:</label>
           <div class="col-xs-10">
             <input class="form-control" type="text" id="position" name="position" required ng-model="editedTeacher.position">
           </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherEditForm.position.$pristine || teacherEditForm.$submitted) && teacherEditForm.position.$invalid">Це поле слід заповнити</span>
+            </div>
         </div>
       <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Фото:</label>
@@ -52,11 +58,17 @@
                         </div>
                         <input type="text" id="teacherPhotoBase64" ng-model="editedTeacher.photo" style="visibility:hidden">
             </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherEditForm.photo.$pristine || teacherEditForm.$submitted) && teacherEditForm.photo.$invalid">Це поле слід заповнити</span>
+            </div>
             <div class="form-group row">
                 <label for="text" class="col-xs-2 col-form-label">Коротка інформація: </label>
                   <div class="col-xs-10">
                     <textarea class="form-control" id="text" rows="4" id="description" name="description" ng-model="editedTeacher.description"></textarea>
                   </div>
+                <div class="col-xs-10 col-xs-offset-2">
+                    <span class="form-error-message" ng-show="(!teacherEditForm.description.$pristine || teacherEditForm.$submitted) && teacherEditForm.description.$invalid">Це поле слід заповнити</span>
+            </div>
             </div>
             <div class="row">
                 <div class="col-xs-offset-3 col-xs-6">
