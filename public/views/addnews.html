@@ -105,6 +105,9 @@
           
 //        var preview = document.getElementById("img-preview");
         var container = document.getElementById("preview-container");
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
         var preview = document.createElement("img");
         preview.onload = function(){
           console.log('Image after compression: height - '+preview.naturalHeight+', width - '+preview.naturalWidth);  
@@ -113,7 +116,6 @@
         preview.setAttribute('id', 'img-preview');
         preview.src = comprSourceData;
         container.appendChild(preview);
-        document.getElementById("photo").files.length = 0;
          
         
 
