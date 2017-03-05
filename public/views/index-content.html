@@ -5,7 +5,8 @@
         <div class="page-header">
             <div class="row">
               <div class="col-md-10 col-xs-12"><h1>Що в нас нового?</h1></div>
-              <div id="add_news_button" class="col-md-2 col-xs-12"><button class="btn btn-danger btn-lg add_news_button" ng-if="isAdmin()" ng-click="openNewsAddModal()">Додати...</button></div>
+<!--                Add ng-if="isAdmin()" in production to hide the element below from unauthorized users-->
+              <div id="add_news_button" class="col-md-2 col-xs-12"><button class="btn btn-danger btn-lg add_news_button" ng-click="openNewsAddModal()">Додати...</button></div>
          </div>
           </div>
         <div id="news_section" class="row" >
