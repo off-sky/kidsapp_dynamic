@@ -48,7 +48,7 @@ angular.module('kiddsapp.controllers', [])
     $scope.loginErrorText = '';
     $scope.signInError = false;
     $scope.signInErrorText = '';
-    $scope.newUser = {username:'', email:'', password:'', adminCode:''};
+    $scope.newUser = {username:'', email:'', password:'', adminCode:'', lastName:'', firstName:'', position:''};
     $scope.user = {username:'', password: ''}
     
     $scope.doLogIn = function(){

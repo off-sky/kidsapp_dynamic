@@ -10,11 +10,11 @@ var UserSchema = new Schema({
     password: String,
     OauthId: String,
     OauthToken: String,
-    firstname: {
+    firstName: {
         type: String,
         default: ''
     },
-    lastname: {
+    lastName: {
         type: String,
         default: ''
     },
