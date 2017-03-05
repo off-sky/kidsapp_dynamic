@@ -93,20 +93,29 @@
         <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Прізвище:</label>
           <div class="col-xs-10">
-            <input class="form-control" type="text" id="title" name="title" required ng-model="teacherForAdd.lastName">
+            <input class="form-control" type="text" id="lastname" name="lastname" required ng-model="teacherForAdd.lastName">
           </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherAddForm.lastname.$pristine || teacherAddForm.$submitted) && teacherAddForm.lastname.$invalid">Це поле слід заповнити</span>
+            </div>
         </div>
         <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Ім'я та по батькові:</label>
           <div class="col-xs-10">
-            <input class="form-control" type="text" id="title" name="title" required ng-model="teacherForAdd.firstName">
+            <input class="form-control" type="text" id="firstname" name="firstname" required ng-model="teacherForAdd.firstName">
           </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherAddForm.firstname.$pristine || teacherAddForm.$submitted) && teacherAddForm.firstname.$invalid">Це поле слід заповнити</span>
+            </div>
         </div>
         <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Посада:</label>
           <div class="col-xs-10">
-            <input class="form-control" type="text" id="title" name="title" required ng-model="teacherForAdd.position">
+            <input class="form-control" type="text" id="position" name="position" required ng-model="teacherForAdd.position">
           </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherAddForm.position.$pristine || teacherAddForm.$submitted) && teacherAddForm.position.$invalid">Це поле слід заповнити</span>
+            </div>
         </div>
       <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Фото:</label>
@@ -120,15 +129,21 @@
                         </div>
                         <input type="text" id="teacherPhotoBase64" ng-model="editedTeacher.photo" style="visibility:hidden">
             </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherAddForm.photo.$pristine || teacherAddForm.$submitted) && teacherAddForm.photo.$invalid">Це поле слід заповнити</span>
+            </div>
             <div class="form-group row">
                 <label for="text" class="col-xs-2 col-form-label">Коротка інформація: </label>
                   <div class="col-xs-10">
-                    <textarea class="form-control" id="text" rows="4" ng-model="teacherForAdd.description"></textarea>
+                    <textarea class="form-control" id="text" rows="4" id="description" name="description" ng-model="teacherForAdd.description" required></textarea>
                   </div>
+                <div class="col-xs-10 col-xs-offset-2">
+                    <span class="form-error-message" ng-show="(!teacherAddForm.description.$pristine || teacherAddForm.$submitted) && teacherAddForm.description.$invalid">Це поле слід заповнити</span>
+                </div>
               </div>
             <div class="row">
                 <div class="col-xs-offset-4 col-xs-6">
-                    <button type="button" class="btn btn-primary btn-xs" ng-click="addTeacher()">Додати</button>
+                    <button type="submit" class="btn btn-primary btn-xs" ng-click="addTeacher()">Додати</button>
                     <button type="button" class="btn btn-info btn-xs" ng-click="cancelTeacherAdd()">Скасувати</button>
                 </div>
             </div>
