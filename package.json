@@ -6,7 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "node":"4.4.7",
+    "bcrypt": "^1.0.2",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
@@ -14,7 +14,9 @@
     "express-session": "^1.15.1",
     "jade": "~1.11.0",
     "jsonwebtoken": "^7.3.0",
+    "mongoose": "^4.8.5",
     "morgan": "~1.7.0",
+    "node": "4.4.7",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
