@@ -54,8 +54,11 @@
                         <div class="form-group row">
                           <label for="username" class="col-xs-2 col-form-label">Ім'я користувача</label>
                           <div class="col-xs-9 col-xs-offset-1">
-                            <input class="form-control" type="text" id="username" name="username" ng-model="newUser.username">
+                            <input class="form-control" type="text" id="username" name="username" ng-model="newUser.username" required>
                           </div>
+                        <div class="col-xs-9">
+                             <span class="form-error-message" ng-show="(!signInForm.username.$pristine || signInForm.$submitted) && signInForm.username.$invalid">Це поле слід заповнити</span>
+                        </div> 
                         </div>
                         <div class="form-group row">
                           <label for="email" class="col-xs-2 col-form-label">Електронна пошта</label>
@@ -66,13 +69,13 @@
                         <div class="form-group row">
                           <label for="firstname" class="col-xs-2 col-form-label">Ваше ім'я</label>
                           <div class="col-xs-9 col-xs-offset-1">
-                            <input class="form-control" type="email" id="firstname" name="firstname" ng-model="newUser.firstName">
+                            <input class="form-control" type="email" id="firstname" name="firstname" ng-model="newUser.firstName" required>
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="lastname" class="col-xs-2 col-form-label">Ваше прізвище</label>
                           <div class="col-xs-9 col-xs-offset-1">
-                            <input class="form-control" type="email" id="lastname" name="lastname" ng-model="newUser.lastName">
+                            <input class="form-control" type="email" id="lastname" name="lastname" ng-model="newUser.lastName" required>
                           </div>
                         </div>
                         <div class="form-group row">

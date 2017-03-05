@@ -67,8 +67,10 @@ angular.module('kiddsapp.controllers', [])
         
     }
     $scope.doSignIn = function(){
+        if (!($scope.newUser.username && $scope.newUser.username.length > 0) || !($scope.newUser.lastName && $scope.newUser.lastName.length > 0) || !($scope.newUser.firstName && $scope.newUser.firstName.length > 0)) {
+            return
+        }
         $scope.signInError = false;
-        if ($scope.newUser.username != '' && $scope.newUser.password != '' && $scope.newUser.email != '') {
             userFactory.userResource.register.registerUser($scope.newUser, function(res){
                 userFactory.saveToken(res.token);
                 userFactory.updateCurrentUser();
@@ -76,7 +78,6 @@ angular.module('kiddsapp.controllers', [])
                 $scope.signInError = true;
                 $scope.signInErrorText = err;
             })
-        }
     }
     
 }])
