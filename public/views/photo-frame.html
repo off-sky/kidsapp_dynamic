@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="row" style="padding:5px">
+        <div class="col-xs-1 col-xs-offset-11">
+             <button type="button" class="close" data-dismiss="modal" ng-click="closeModal()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+    </div>
+   
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-2">
+                <button ng-click="previousPhoto()" class="btn btn-xs btn-info">Попереднє</button>
+            </div>
+            <div class="col-xs-9 photo-detail-div">
+                <img ng-src="{{currentPhoto.ref}}" class="img img-responsive photo-detail-photo">
+                <div class="row">
+                        <h3>{{currentEvent.name}}</h3>
+                        <h3><small>{{currentEvent.date}}</small></h3>
+                    </div>
+            </div>
+            <div class="col-xs-1">
+                <button ng-click="nextPhoto()" class="btn btn-xs btn-info">Наступне</button>
+            </div>
+        </div>
+    </div>
+</div>

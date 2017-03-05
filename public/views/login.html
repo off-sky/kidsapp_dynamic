@@ -1,0 +1,112 @@
+<!-- Modal -->
+
+
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0px">
+        <button type="button" class="close" data-dismiss="modal" ng-click="closeModal()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+          
+          
+          
+          
+        <uib-tabset active="active" justified="true">
+            <uib-tab index="0" heading="Увійти">
+                <div class="row" style="padding-top:20px">
+                        <!--        Login form-->
+              <form novalidate name="loginForm">
+                    <div class="form-group row" ng-class="{'has-error': !loginForm.userinput.$pristine && loginForm.userinput.$invalid}">
+                      <label for="userinput" class="col-xs-2 col-form-label">Ім'я або Email</label>
+                      <div class="col-xs-9">
+                        <input class="form-control form-control-danger" type="text" id="userinput" name="userinput" ng-model="user.username" required>
+                      </div>
+                        <div class="col-xs-9">
+                             <span class="form-error-message" ng-show="!loginForm.userinput.$pristine && loginForm.userinput.$invalid">Це поле слід заповнити</span>
+                        </div>
+                  </div>
+                        <div class="form-group row" ng-class="{'has-error': !loginForm.password.$pristine && loginForm.password.$invalid}">
+                          <label for="password" class="col-xs-2 col-form-label">Пароль</label>
+                          <div class="col-xs-9">
+                            <input class="form-control" type="password" name="password" id="password" ng-model="user.password" required>
+
+                          </div>
+                            <div class="col-xs-9 col-xs-offset-2">
+                                <span class="form-error-message" ng-show="!loginForm.password.$pristine && loginForm.password.$invalid">Це поле слід заповнити</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-xs-4 col-xs-offset-4">
+                            <button type="button" class="btn btn-primary" ng-click="doLogIn()" data-dismiss="modal">Увійти</button>
+                          </div>
+                        </div>
+              </form>
+
+        <!--          End of login form-->
+                  <div>
+                      <span class="form-warning-message" ng-show="loginError">{{loginErrorText}}</span>
+                  </div>
+            </div>
+            </uib-tab>
+            <uib-tab index="1" heading="Реєстрація">
+                <div class="row" style="padding-top:20px">
+<!--                    Sign in form-->
+                    <form novalidate name="signInForm">
+                        <div class="form-group row">
+                          <label for="username" class="col-xs-2 col-form-label">Ім'я користувача</label>
+                          <div class="col-xs-9 col-xs-offset-1">
+                            <input class="form-control" type="text" id="username" name="username" ng-model="newUser.username">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="email" class="col-xs-2 col-form-label">Електронна пошта</label>
+                          <div class="col-xs-9 col-xs-offset-1">
+                            <input class="form-control" type="email" id="email" name="email" ng-model="newUser.email">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="firstname" class="col-xs-2 col-form-label">Ваше ім'я</label>
+                          <div class="col-xs-9 col-xs-offset-1">
+                            <input class="form-control" type="email" id="firstname" name="firstname" ng-model="newUser.firstname">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="lastname" class="col-xs-2 col-form-label">Ваше прізвище</label>
+                          <div class="col-xs-9 col-xs-offset-1">
+                            <input class="form-control" type="email" id="lastname" name="lastname" ng-model="newUser.lastname">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="position" class="col-xs-2 col-form-label">Посада</label>
+                          <div class="col-xs-9 col-xs-offset-1">
+                            <input class="form-control" type="email" id="position" name="position" ng-model="newUser.position">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="password" class="col-xs-2 col-form-label">Пароль</label>
+                          <div class="col-xs-9 col-xs-offset-1">
+                            <input class="form-control" type="password" id="password" name="password" ng-model="newUser.password">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="admincode" class="col-xs-5 col-form-label">Код для отримання прав адміністратора</label>
+                          <div class="col-xs-6 col-xs-offset-1">
+                            <input class="form-control" type="text" id="admincode" name="admincode" ng-model="newUser.adminCode">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-xs-4 col-xs-offset-4">
+                            <button type="button" class="btn btn-primary" ng-click="doSignIn()" data-dismiss="modal">Зареєструватись</button>
+                          </div>
+                        </div>
+                    </form>
+<!--                    End of sign in form-->
+                    <div>
+                      <span class="form-warning-message" ng-show="signInError">{{signInErrorText}}</span>
+                  </div>
+                </div>
+            </uib-tab>
+        </uib-tabset> 
+      </div>
+    </div>
+  </div>
+

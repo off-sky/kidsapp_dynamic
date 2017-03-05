@@ -1,0 +1,26 @@
+ <div class="row event-detail">
+    <div class="event-label" style="position: absolute; left:45%; top:20px;">
+       <h4>{{event.name}} <br><small>{{event.date}}</small></h4>
+    </div>
+      <div style="position: absolute; left:90%; top:10px;">
+          <a ui-sref="app.aboutus.general({scrollTo: 'gallery'})"><button class="btn btn-sm btn-primary">Назад</button></a>
+      </div>
+
+
+    <div class="col-xs-12" style="margin-top:100px;">
+        <div class="row" style="white-space:nowrap">
+            <div class="col-xs-12">
+                <div class="event-detail-div" ng-repeat="photo in upperPortion">
+                    <a ui-sref="app.aboutus.photo({eventId: event._id, photoId: photo._id})"><img ng-src="{{photo.ref}}" class="img img-responsive event-detail-image" style="max-width: 400px"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="white-space:nowrap">
+            <div class="col-xs-12">
+                <div class="event-detail-div" ng-repeat="photo in lowerPortion">
+                    <a ui-sref="app.aboutus.photo({eventId: event._id, photoId: photo._id})"><img ng-src="{{photo.ref}}" class="img img-responsive event-detail-image" style="max-width: 200px"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

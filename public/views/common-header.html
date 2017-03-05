@@ -1,0 +1,54 @@
+<div class="row" style="padding-top: 5%; background-color:#88d6fa">
+           <div class="col-xs-4 hidden-lg"></div>
+          <div class="col-xs-4 col-lg-3" >
+            <a ui-sref="app"><img id="logo" src="assets/logo.png" class="img-responsive"></a>
+          </div>
+           
+          
+         <!--Menu div -->
+        <div class="col-xs-12 col-lg-9 container-menu" ng-controller="menubarController">
+                      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse no_left_pad" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a ui-sref="app({scrollTo:'news'})">Що нового? <span class="sr-only">What's up?</span></a></li>
+                <li class="dropdown" ui-sref-active="active">
+                  <a href="aboutus.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Наша школа <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a class="drop_item" ui-sref="app.aboutus({scrollTo:'we'})"><i id="menu_icon" class="fa fa-mortar-board menu_icon"></i> Про нас</a></li>
+                    <li><a class="drop_item" ui-sref="app.aboutus({scrollTo:'teachers'})"><i id="menu_icon" class="fa fa-book menu_icon"></i> Вчителі</a></li>
+                    <li><a class="drop_item" ui-sref="app.aboutus({scrollTo:'gallery'})"><i id="menu_icon" class="fa fa-camera menu_icon"></i> Галерея</a></li>
+                  </ul>
+                </li>
+                  <li class="dropdown" ui-sref-active="active">
+                  <a href="services.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Послуги <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="drop_item" ui-sref="app.services({scrollTo: 'english'})"><img class="img menu_flag" src="assets/flag_gb.png"> Англійська</a></li>
+                    <li><a class="drop_item" ui-sref="app.services({scrollTo: 'german'})"><img class="img menu_flag" src="assets/flag_ger.png"> Німецька</a></li>
+                     <li><a class="drop_item" ui-sref="app.services({scrollTo: 'other'})"><img class="img menu_flag" src="assets/star.png">Інше</a></li>
+                  </ul>
+                </li>
+                <li><a ui-sref-active="active" ui-sref="app.passtest_initial">Пройти тест <span class="sr-only">Test yourself</span></a></li>
+                  <li><a ui-sref-active="active" ui-sref="app.contactus">Контакти <span class="sr-only">Contact us</span></a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li id="user-label" ng-click="doLogOut()"><a href="#">{{currentUser().username}}</a></li>
+                  <li><a ng-click="openLoginModal()" href="#"><i class="fa fa-sign-in fa-lg"></i></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+          </div> <!-- End of menu div-->
+         
+          
+      </div> <!-- row -->
