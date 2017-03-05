@@ -1080,7 +1080,7 @@ angular.module('kiddsapp.controllers', [])
     $scope.printResult = function(){
         calculateStatistics();
         console.log($scope.testDetails);
-        if (testDetails.remember && testDetails.username.length > 0) {
+        if ($scope.testDetails.remember && $scope.testDetails.username.length > 0) {
             var questionObject = {questions : $scope.testDetails.questions}
             var questionString = JSON.stringify(questionObject);
             delete $scope.testDetails.questions;
