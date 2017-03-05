@@ -22,25 +22,28 @@
         <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Прізвище:</label>
           <div class="col-xs-10">
-            <input class="form-control" type="text" id="title" name="title" required ng-model="editedTeacher.lastName">
+            <input class="form-control" type="text" id="lastname" name="lastname" required ng-model="editedTeacher.lastName">
           </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="(!teacherEditForm.lastname.$pristine || teacherEditForm.$submitted) && teacherEditForm.lastname.$invalid">Це поле слід заповнити</span>
+            </div>
         </div>
         <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Ім'я та по батькові:</label>
           <div class="col-xs-10">
-            <input class="form-control" type="text" id="title" name="title" required ng-model="editedTeacher.firstName">
+            <input class="form-control" type="text" id="firstname" name="firstname" required ng-model="editedTeacher.firstName">
           </div>
         </div>
         <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Посада:</label>
           <div class="col-xs-10">
-            <input class="form-control" type="text" id="title" name="title" required ng-model="editedTeacher.position">
+            <input class="form-control" type="text" id="position" name="position" required ng-model="editedTeacher.position">
           </div>
         </div>
       <div class="form-group row">
           <label for="title" class="col-xs-2 col-form-label">Фото:</label>
           <div class="col-xs-10">
-            <input type="file" id="photo" name="photo" onchange="encodeImageFileAsURL()">
+            <input type="file" id="photo" name="photo" onchange="encodeImageFileAsURL()" required>
           </div>
         </div>
             <div class="row" style="padding-bottom: 10px;">
@@ -52,12 +55,12 @@
             <div class="form-group row">
                 <label for="text" class="col-xs-2 col-form-label">Коротка інформація: </label>
                   <div class="col-xs-10">
-                    <textarea class="form-control" id="text" rows="4" ng-model="editedTeacher.description"></textarea>
+                    <textarea class="form-control" id="text" rows="4" id="description" name="description" ng-model="editedTeacher.description"></textarea>
                   </div>
-              </div>
+            </div>
             <div class="row">
                 <div class="col-xs-offset-3 col-xs-6">
-                    <button type="button" class="btn btn-primary btn-xs" ng-click="saveTeacherChanges(teacher)">Зберегти зміни</button>
+                    <button type="submit" class="btn btn-primary btn-xs" ng-click="saveTeacherChanges(teacher)">Зберегти зміни</button>
                     <button type="button" class="btn btn-info btn-xs" ng-click="cancelTeacherChanges()">Скасувати</button>
                 </div>
             </div>
