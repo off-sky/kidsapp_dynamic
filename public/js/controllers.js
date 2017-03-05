@@ -491,11 +491,15 @@ angular.module('kiddsapp.controllers', [])
     }
     
     $scope.addTeacher = function(){
+        
          var newTeacher = JSON.parse(JSON.stringify($scope.teacherForAdd))
          newTeacher._id = new Date().getMilliseconds+teachersForAdd.length;
          var photoPreview = angular.element(document.querySelector('#img-preview'));
          var base64Image = photoPreview.attr('src');
          newTeacher.photo = base64Image;
+         if(!($scope.teacherForAdd.firstName && $scope.teacherForAdd.firstName.length > 0) || !($scope.teacherForAdd.lastName && $scope.teacherForAdd.lastName.length > 0) || !($scope.teacherForAdd.position && $scope.teacherForAdd.position.length > 0) || !($scope.teacherForAdd.description && $scope.teacherForAdd.description.length > 0) || !($scope.teacherForAdd.photo && $scope.teacherForAdd.photo.length > 0)) {
+            return
+         }
          newTeacher.newby = true;
          teachersForAdd.push(newTeacher);
          $scope.teachers.push(newTeacher);
@@ -514,6 +518,9 @@ angular.module('kiddsapp.controllers', [])
     }
     
     $scope.saveTeacherChanges = function(teacher){
+        if(!($scope.editedTeacher.firstName && $scope.editedTeacher.firstName.length > 0) || !($scope.editedTeacher.lastName && $scope.editedTeacher.lastName.length > 0) || !($scope.editedTeacher.position && $scope.editedTeacher.position.length > 0) || !($scope.editedTeacher.description && $scope.editedTeacher.description.length > 0)) {
+            return
+         }
         var photoPreview = angular.element(document.querySelector('#img-preview'));
         var base64Image = photoPreview.attr('src');
         teacher._id = $scope.editedTeacher._id;
