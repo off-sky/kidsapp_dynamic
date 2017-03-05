@@ -659,7 +659,9 @@ angular.module('kiddsapp.controllers', [])
        if (!($scope.newEvent.name && $scope.newEvent.name.length < 0) || !($scope.newEvent.date && $scope.newEvent.date.length < 0) || $scope.newEvent.photos.length < 3) {
            return;
        }
-       galleryFactory.galleryResource.postEvent($scope.newEvent);
+       galleryFactory.galleryResource.postEvent($scope.newEvent, function(res){}, function(err){
+           console.log(err);
+       });
        $uibModalInstance.close();
     }
     $scope.closeModal = function(){
