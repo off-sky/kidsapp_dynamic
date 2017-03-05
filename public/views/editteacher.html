@@ -130,7 +130,7 @@
                         <input type="text" id="teacherPhotoBase64" ng-model="editedTeacher.photo" style="visibility:hidden">
             </div>
             <div class="col-xs-10 col-xs-offset-2">
-                <span class="form-error-message" ng-show="(!teacherAddForm.photo.$pristine || teacherAddForm.$submitted) && (teacherForAdd.photo.length <= 0)">Додайте, будь ласка, фото</span>
+                <span class="form-error-message" ng-show="teacherAddForm.$submitted && (teacherForAdd.photo.length <= 0)">Додайте, будь ласка, фото!</span>
             </div>
             <div class="form-group row">
                 <label for="text" class="col-xs-2 col-form-label">Коротка інформація: </label>
