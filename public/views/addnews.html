@@ -31,7 +31,7 @@
                         <input class="form-control" type="text" id="author" name="author" required ng-model="newsToAdd.author">
                       </div>
                     <div class="col-xs-10 col-xs-offset-2">
-                         <span class="form-error-message" ng-show="!newsAddForm.author.$pristine && newsAddForm.author.$invalid">Це поле слід заповнити</span>
+                         <span class="form-error-message" ng-show="(!newsAddForm.author.$pristine || newsAddForm.$submitted) && newsAddForm.author.$invalid">Це поле слід заповнити</span>
                     </div>
                     </div>
                       <div class="form-group row">
@@ -52,7 +52,7 @@
                             <textarea class="form-control" id="newsText" id="newsText" rows="15" ng-model="newsToAdd.text"></textarea>
                           </div>
                     <div class="col-xs-10 col-xs-offset-2">
-                         <span class="form-error-message" ng-show="!newsAddForm.newsText.$pristine && newsAddForm.newsText.$invalid">Так поспішали, що про новину й забули...</span>
+                         <span class="form-error-message" ng-show="(!newsAddForm.newsText.$pristine || newsAddForm.$submitted) && newsAddForm.newsText.$invalid">Так поспішали, що про новину й забули...</span>
                     </div>
                       </div>
                       <div class="form-group row">
