@@ -23,11 +23,11 @@ router.post('/register', function (req, res) {
         if (err) {
           return res.status(500).json({err: err});
         }
-        if (req.body.firstname) {
-          user.firstname = req.body.firstname;
+        if (req.body.firstName) {
+          user.firstName = req.body.firstName;
        }
-       if (req.body.lastname) {
-          user.lastname = req.body.lastname;
+       if (req.body.lastName) {
+          user.lastName = req.body.lastName;
        }
        if (req.body.email) {
           user.email = req.body.email;
@@ -37,6 +37,9 @@ router.post('/register', function (req, res) {
        }
        if (req.body.group) {
           user.group = req.body.group;
+       }
+      if (req.body.position) {
+          user.position = req.body.position;
        }
        if (req.body.adminCode == config.adminCode) {
           user.admin = true;
