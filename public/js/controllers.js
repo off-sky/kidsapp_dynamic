@@ -630,6 +630,10 @@ angular.module('kiddsapp.controllers', [])
             console.log('Image source: ' + photos[i].src);
             counter++;
         }
+        if (!($scope.editedEvent.name && $scope.editedEvent.name.length > 0) || !($scope.editedEvent.date && $scope.editedEvent.date.length > 0) || $scope.editedEvent.photos.length < 3) {
+           console.log("Photo posting refused...");
+           return;
+       }
         console.log(counter+' new photos added...');
         galleryFactory.galleryResource.updateEvent({eventId: $scope.editedEvent._id}, $scope.editedEvent);
         $uibModalInstance.close();
@@ -645,7 +649,7 @@ angular.module('kiddsapp.controllers', [])
          galleryFactory.galleryResource.deleteEvent({eventId: $scope.editedEvent._id});
         $uibModalInstance.close();
     }
-}])
+}])s
 
 .controller('addEventController', ['$uibModalInstance', '$scope', 'galleryFactory', function($uibModalInstance, $scope, galleryFactory){
     $scope.newEvent = {name:'', date: '', photos: []}

@@ -3,24 +3,33 @@
         <h3 class="modal-title">Редагування події <button type="button" class="close" data-dismiss="modal" ng-click="closeModal()" aria-label="Close"><span aria-hidden="true">&times;</span></button></h3>
     </div>
     <div class="modal-body">
-        <form name="eventAddForm">
+        <form name="eventEditForm" novalidate>
             <div class="form-group row">
               <label for="title" class="col-xs-2 col-form-label">Назва:</label>
               <div class="col-xs-10">
-                <input class="form-control" type="text" id="title" name="title" required ng-model="editedEvent.name">
+                <input class="form-control" type="text" id="name" name="name" required ng-model="editedEvent.name">
               </div>
+                <div class="col-xs-10 col-xs-offset-2">
+                    <span class="form-error-message" ng-show="(!eventEditForm.name.$pristine || eventEditForm.$submitted) && eventEditForm.name.$invalid">Це поле слід заповнити</span>
+                </div>
             </div>
             <div class="form-group row">
               <label for="date" class="col-xs-2 col-form-label">Дата:</label>
               <div class="col-xs-10">
-                <input class="form-control" type="text" id="title" name="title" required ng-model="editedEvent.date">
+                <input class="form-control" type="text" id="date" name="date" required ng-model="editedEvent.date">
               </div>
+                <div class="col-xs-10 col-xs-offset-2">
+                    <span class="form-error-message" ng-show="(!eventEditForm.date.$pristine || eventEditForm.$submitted) && eventEditForm.date.$invalid">Це поле слід заповнити</span>
+                </div>
             </div>
             <div class="form-group row">
           <label for="photo" class="col-xs-2 col-form-label">Фото:</label>
           <div class="col-xs-10">
             <input type="file" id="photo" name="photo" onchange="encodeImageFileAsURL()" multiple>
           </div>
+            <div class="col-xs-10 col-xs-offset-2">
+                <span class="form-error-message" ng-show="eventEditForm.$submitted && (editedEvent.photos.length < 3)">Залиште хоча б три фото!</span>
+            </div>
         </div>
             <div class="row" style="padding-bottom: 10px;">
                 <div id="preview-container" class="col-xs-10 col-xs-offset-2">
