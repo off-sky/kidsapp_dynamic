@@ -1095,7 +1095,10 @@ angular.module('kiddsapp.controllers', [])
             $scope.testDetails.questionString = questionString;
             passTestFactory.testResultResource.postResult($scope.testDetails, function(res){
                 $state.go('app.passtest_result_saved', {trId: res.id});
-            }, function(err){ console.log(err)}); 
+            }, function(err){ 
+                console.log(err);
+                $state.go('app.passtest_result', {testDetails: $scope.testDetails, message: 'Не вдалося зберегти результат на сервер через помилку сервера. Спробуйте, будь ласка, пізніше! '});
+            }); 
         } else $state.go('app.passtest_result', {testDetails: $scope.testDetails});  
     }
     //end of test MatchQuestion
@@ -1213,10 +1216,10 @@ angular.module('kiddsapp.controllers', [])
     }
 }])
 
-.controller('passTestResultController', ['$scope', 'testDetails', '$state', function($scope, testDetails, $state){
+.controller('passTestResultController', ['$scope', 'testDetails', '$state', 'message', function($scope, testDetails, $state, message){
     if (testDetails == null) $state.go('app.passtest_initial');
     $scope.testDetails = testDetails;
-    $scope.message = '';
+    $scope.message = message;
     $scope.getTextLevel = function(level_id) {
         if (level_id == 0) return 'Незайманий'
         if (level_id == 1) return 'Початковий'

@@ -332,7 +332,8 @@ angular.module('kiddsapp', ['kiddsapp.controllers', 'kiddsapp.services', 'ui.rou
     .state('app.passtest_result', {
         url: 'results/',
         params: {
-            testDetails: null
+            testDetails: null,
+            message: null
         },
         views: {
             'header@': {
@@ -346,6 +347,9 @@ angular.module('kiddsapp', ['kiddsapp.controllers', 'kiddsapp.services', 'ui.rou
         resolve: {
             testDetails: ['$stateParams', function($stateParams){
                return $stateParams.testDetails; 
+            }],
+            message: ['$stateParams', function($stateParams){
+               return $stateParams.message; 
             }]
         }
     })
