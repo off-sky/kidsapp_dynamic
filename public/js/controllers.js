@@ -656,7 +656,8 @@ angular.module('kiddsapp.controllers', [])
        for (var i = 0; i < photos.length; i++) {
            $scope.newEvent.photos.push({ref: photos[i].src});
        }
-       if (!($scope.newEvent.name && $scope.newEvent.name.length < 0) || !($scope.newEvent.date && $scope.newEvent.date.length < 0) || $scope.newEvent.photos.length < 3) {
+       if (!($scope.newEvent.name && $scope.newEvent.name.length > 0) || !($scope.newEvent.date && $scope.newEvent.date.length > 0) || $scope.newEvent.photos.length < 3) {
+           console.log("Photo posting refused...");
            return;
        }
        galleryFactory.galleryResource.postEvent($scope.newEvent, function(res){}, function(err){
