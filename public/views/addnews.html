@@ -45,6 +45,9 @@
                       <div class="col-xs-10">
                         <input class="form-control" type="text" id="date" name="date" placeholder="Наприклад, 13 жовтня 2015" ng-model="newsToAdd.date">
                       </div>
+                        <div class="col-xs-10 col-xs-offset-2">
+                         <span class="form-error-message" ng-show="(!newsAddForm.date.$pristine || newsAddForm.$submitted) && newsAddForm.date.$invalid">Це поле слід заповнити</span>
+                    </div>
                     </div>
                       <div class="form-group row">
                         <label for="text" class="col-xs-2 col-form-label">Новина</label>

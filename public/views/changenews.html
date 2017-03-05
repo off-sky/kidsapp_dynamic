@@ -11,7 +11,7 @@
                       <div class="col-xs-10">
                         <input class="form-control" type="text" id="title" name="title" required ng-model="newsToChange.title">
                       </div>
-                        <div class="col-xs-10 col-xs-offset-2">
+                    <div class="col-xs-10 col-xs-offset-2">
                          <span class="form-error-message" ng-show="(!newsChangeForm.title.$pristine || newsChangeForm.$submitted) && newsChangeForm.title.$invalid">Це поле слід заповнити</span>
                     </div>
                     </div>
@@ -31,6 +31,9 @@
                       <div class="col-xs-10">
                         <input class="form-control" type="text" id="author" name="author" required ng-model="newsToChange.author">
                       </div>
+                    <div class="col-xs-10 col-xs-offset-2">
+                         <span class="form-error-message" ng-show="(!newsChangeForm.author.$pristine || newsChangeForm.$submitted) && newsChangeForm.author.$invalid">Це поле слід заповнити</span>
+                    </div>
                     </div>
                       <div class="form-group row">
                       <label for="title" class="col-xs-2 col-form-label">Посада автора:</label>
@@ -41,8 +44,11 @@
                       <div class="form-group row">
                       <label for="title" class="col-xs-2 col-form-label">Дата:</label>
                       <div class="col-xs-10">
-                        <input class="form-control" type="text" id="date" name="date" ng-model="newsToChange.date">
+                        <input class="form-control" type="text" id="date" name="date" ng-model="newsToChange.date" required>
                       </div>
+                        <div class="col-xs-10 col-xs-offset-2">
+                         <span class="form-error-message" ng-show="(!newsChangeForm.date.$pristine || newsChangeForm.$submitted) && newsChangeForm.date.$invalid">Це поле слід заповнити</span>
+                    </div>
                     </div>
                       <div class="form-group row">
                         <label for="text" class="col-xs-2 col-form-label">Новина</label>

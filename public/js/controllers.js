@@ -291,7 +291,7 @@ angular.module('kiddsapp.controllers', [])
     }
     $scope.postClicked = false;
     $scope.saveNews = function(){
-        if (!($scope.newsToAdd.title && $scope.newsToAdd.title.length > 0) || !($scope.newsToAdd.author && $scope.newsToAdd.author.length > 0) || !($scope.newsToAdd.text && $scope.newsToAdd.text.length > 0)) {
+        if (!($scope.newsToAdd.title && $scope.newsToAdd.title.length > 0) || !($scope.newsToAdd.author && $scope.newsToAdd.author.length > 0) || !($scope.newsToAdd.text && $scope.newsToAdd.text.length > 0) || !($scope.newsToAdd.date && $scope.newsToAdd.date.length > 0)) {
             return;
             $scope.postClicked = true;
         }
@@ -311,7 +311,7 @@ angular.module('kiddsapp.controllers', [])
     console.log('Changing news:');
     console.log($scope.newsToChange);
     $scope.saveChanges = function(){
-        if (!($scope.newsToChange.title && $scope.newsToChange.title.length > 0) || !($scope.newsToChange.author && $scope.newsToChange.author.length > 0) || !($scope.newsToChange.text && $scope.newsToChange.text.length > 0)) {
+        if (!($scope.newsToChange.title && $scope.newsToChange.title.length > 0) || !($scope.newsToChange.author && $scope.newsToChange.author.length > 0) || !($scope.newsToChange.text && $scope.newsToChange.text.length > 0) || !($scope.newsToChange.date && $scope.newsToChange.date.length > 0)) {
             return
         }
         var photoPreview = angular.element(document.querySelector('#img-preview'));
