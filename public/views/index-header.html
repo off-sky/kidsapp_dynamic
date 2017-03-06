@@ -47,7 +47,7 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                   <li id="user-label" ng-click="doLogOut()"><a href="#">{{currentUser().username}}</a></li>
-                  <li><a ng-click="openLoginModal()"><i uib-popover="I appeared on mouse enter!" popover-is-open="true" class="fa fa-sign-in fa-lg"></i></a></li>
+                  <li uib-popover-template="views/test-operation-popover.html" popover-is-open="currentUser().username && currentUser().username.length > 0"><a ng-click="openLoginModal()"><i class="fa fa-sign-in fa-lg"></i></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
