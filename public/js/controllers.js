@@ -63,6 +63,7 @@ angular.module('kiddsapp.controllers', [])
                $scope.loginError = true;
                 if (err.data.err.message == "No such username and email")
                $scope.loginErrorText = "Користувача з таким ім'ям або поштою в нас немає";
+                $scope.loginErrorText = err;
             });
         }
         
