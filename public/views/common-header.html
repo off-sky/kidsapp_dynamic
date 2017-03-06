@@ -42,7 +42,7 @@
                   <li><a ui-sref-active="active" ui-sref="app.contactus">Контакти <span class="sr-only">Contact us</span></a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                  <li id="user-label" ng-click="doLogOut()"><a href="#">{{currentUser().username}}</a></li>
+                  <li id="user-label" ng-click="doLogOut()" ng-show="currentUser().username.length > 0"><a href="#">{{currentUser().username + ' '}}&times;</a></li>
                   <li><a ng-click="openLoginModal()" href="#"><i class="fa fa-sign-in fa-lg"></i></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
