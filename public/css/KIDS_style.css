@@ -583,8 +583,9 @@ td strong {
 
 
 .test-op-popover {
-    min-width: 200px;
+    max-width: 300px;
 }
+
 .no_pad {
     padding-left: 0px;
     padding-right: 0px;
