@@ -587,6 +587,9 @@ td strong {
     font-size: 80%;
     padding: 2px;
 }
+.popover-content {
+    padding: 2px;;
+}
 
 .no_pad {
     padding-left: 0px;
