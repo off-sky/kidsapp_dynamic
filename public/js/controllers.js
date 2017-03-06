@@ -53,21 +53,21 @@ angular.module('kiddsapp.controllers', [])
     
     $scope.doLogIn = function(){
         $scope.loginError = false;
-        if ($scope.user != '' && $scope.user.password != '') {
-            userFactory.userResource.login.loginUser($scope.user, function(res){
-                userFactory.saveToken(res.token);
-                userFactory.updateCurrentUser();
-                userFactory.printCurrentUser();
-                $uibModalInstance.close();
-            }, function(err){
-               $scope.loginError = true;
-                if (err.data.err.message == "No such username and email")
-               $scope.loginErrorText = "Користувача з таким ім'ям або поштою в нас немає";
-                else if (err.data.err.message == "Incorrect password")
-                $scope.loginErrorText = "Неправильний пароль";
-                else  $scope.loginErrorText = err;
-            });
-        }
+        if ($scope.user.username.length == 0 || $scope.user.password.length == 0) return
+        userFactory.userResource.login.loginUser($scope.user, function(res){
+            userFactory.saveToken(res.token);
+            userFactory.updateCurrentUser();
+            userFactory.printCurrentUser();
+            $uibModalInstance.close();
+        }, function(err){
+           $scope.loginError = true;
+            if (err.data.err.message == "No such username and email")
+           $scope.loginErrorText = "Користувача з таким ім'ям або поштою в нас немає";
+            else if (err.data.err.message == "Incorrect password")
+            $scope.loginErrorText = "Неправильний пароль";
+            else  $scope.loginErrorText = err;
+        });
+        
         
     }
     $scope.doSignIn = function(){
