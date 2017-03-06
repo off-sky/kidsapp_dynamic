@@ -1,5 +1,5 @@
 angular.module('kiddsapp.controllers', [])
-.controller('menubarController', ['$scope', '$uibModal', 'userFactory', function($scope, $uibModal, userFactory){
+.controller('menubarController', ['$scope', '$uibModal', 'userFactory', '$sce', function($scope, $uibModal, userFactory, $sce){
     userFactory.updateCurrentUser();
     var modalInstance;  
     $scope.openLoginModal = function(){
