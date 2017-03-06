@@ -61,7 +61,8 @@ angular.module('kiddsapp.controllers', [])
                 $uibModalInstance.close();
             }, function(err){
                $scope.loginError = true;
-               $scope.loginErrorText = err;
+                if (err.data.err.message == "No such username and email")
+               $scope.loginErrorText = "Користувача з таким ім'ям або поштою в нас немає";
             });
         }
         

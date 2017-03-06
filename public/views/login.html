@@ -21,7 +21,7 @@
                         <input class="form-control form-control-danger" type="text" id="userinput" name="userinput" ng-model="user.username" required>
                       </div>
                         <div class="col-xs-9">
-                             <span class="form-error-message" ng-show="!loginForm.userinput.$pristine && loginForm.userinput.$invalid">Це поле слід заповнити</span>
+                             <span class="form-error-message" ng-show="(!loginForm.userinput.$pristine || loginForm.$submitted) && loginForm.userinput.$invalid">Це поле слід заповнити</span>
                         </div>
                   </div>
                         <div class="form-group row" ng-class="{'has-error': !loginForm.password.$pristine && loginForm.password.$invalid}">
@@ -31,12 +31,12 @@
 
                           </div>
                             <div class="col-xs-9 col-xs-offset-2">
-                                <span class="form-error-message" ng-show="!loginForm.password.$pristine && loginForm.password.$invalid">Це поле слід заповнити</span>
+                                <span class="form-error-message" ng-show="(!loginForm.password.$pristine || loginForm.$submitted) && loginForm.password.$invalid">Це поле слід заповнити</span>
                             </div>
                         </div>
                         <div class="form-group row">
                           <div class="col-xs-4 col-xs-offset-4">
-                            <button type="button" class="btn btn-primary" ng-click="doLogIn()" data-dismiss="modal">Увійти</button>
+                            <button type="submit" class="btn btn-primary" ng-click="doLogIn()" data-dismiss="modal">Увійти</button>
                           </div>
                         </div>
               </form>
