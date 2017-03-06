@@ -3,7 +3,7 @@
 <div class="container" style="padding-top: 120px; padding-bottom: 130px">
 
 <uib-accordion close-others="true">               
-        <div uib-accordion-group ng-repeat="test in tests" class="panel-default" heading="{{"Пройти \""+test.name+"\""}}" is-open="false">
+        <div uib-accordion-group ng-repeat="test in tests" class="panel-default" heading="Пройти {{test.name}}" is-open="false">
               <div class="panel-body">
                   <div class="row">
                     <div class="col-xs-12">
