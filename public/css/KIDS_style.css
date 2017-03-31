@@ -36,7 +36,10 @@
     z-index: 5; 
     padding: 5px;
 }
-
+.testop-popover-header {
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
 .upload-message {
     display: inline-block;
     min-width: 300px;
@@ -503,6 +506,10 @@ td strong {
     margin-top: 2%;
 }
 
+.index-container-menu {
+     margin-top: 6%;
+}
+
 .menu_flag {
     height: 18px;
 }
@@ -543,6 +550,7 @@ td strong {
     position: absolute;
     bottom: 15px;
     display: none;
+    cursor: pointer;
     
 }
 
@@ -556,13 +564,14 @@ td strong {
 
 
 .upper_row {
-    background-color: #b3e7ff;
     position: relative;
     width: 100%;
-    
-
+    background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-
 
 
 .news-row {
@@ -668,7 +677,9 @@ td strong {
     right: 0px;
 }
 
-
+.upper_row {
+    background-image: none;
+}
 
 .left-scr-sm:hover, .right-scr-sm:hover {
     opacity: 0.7;
@@ -788,8 +799,6 @@ td strong {
     } 
 
     
-    
-    
     #english .panel-title a, 
     #german .panel-title a
 {
@@ -836,6 +845,10 @@ td strong {
     
     .teacher-text {
         max-height: 270px;
+    }
+    
+    .upper_row {
+        background-image: none;
     }
     
     #english .panel-title a, 
@@ -936,14 +949,6 @@ td strong {
         margin-left: 20%;
     }
     
-    #down_button {
-        left: 50%;
-        width: 20px;
-        position: absolute;
-        bottom: 10px;
-        display: inline;
-    
-    }
     
    
     
@@ -958,24 +963,29 @@ td strong {
     
     }
     
-    .upper_row {
-    padding-top: 1%;
-    padding-right: 0px;
-    background-color: #b3e7ff;
-    background-image: url('../assets/ship_ensemble_res_768.png');
-    background-size: 100% no-repeat; 
-    height: 405px;
-    width: auto;
-    margin-bottom: 40px;
-    margin-right: 0px;
-   
-    }
     
 }
 
 /*for largest screens*/
 @media (min-width: 900px) {
+    .upper_row {
+        position: relative;
+        width: 100%;
+        min-height: 600px;
+        background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #down_button {
+        left: 50%;
+        width: 20px;
+        position: absolute;
+        bottom: 10px;
+        display: inline;
     
+    }
 
     
     #english .panel-title a, 
@@ -1024,18 +1034,6 @@ td strong {
         margin-top: 0px;
     }
     
-    .upper_row {
-    padding-top: 5%;
-    padding-right: 0px;
-    background-color: #b3e7ff;
-    background-image: url('../assets/ship_ensemble_res.png');
-    background-size: 100% no-repeat; 
-    min-height: 820px;
-    width: auto;
-    margin-bottom: 40px;
-    margin-right: 0px;
-   
-    }
     
 }
 
@@ -1173,6 +1171,68 @@ td strong {
     }
 }
 
+@media (min-width: 1000px) {
+    .upper_row {
+        position: relative;
+        width: 100%;
+        min-height: 700px;
+        background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
 
+@media (min-width: 1400px) {
+    .upper_row {
+        position: relative;
+        width: 100%;
+        min-height: 800px;
+        background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
 
+@media (min-width: 1600px) {
+    .upper_row {
+        position: relative;
+        width: 100%;
+        min-height: 900px;
+        background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 2000px) {
+    .upper_row {
+        position: relative;
+        width: 100%;
+        min-height: 1150px;
+        background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 3000px) {
+    .upper_row {
+        position: relative;
+        width: 100%;
+        min-height: 1700px;
+        background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
 

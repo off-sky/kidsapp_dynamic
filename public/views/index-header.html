@@ -10,7 +10,7 @@
           </div>
           
           <!--Menu div -->
-                  <div class="col-xs-12 col-lg-9 container-menu" ng-controller="menubarController">
+                  <div class="col-xs-12 col-lg-9 index-container-menu" ng-controller="menubarController">
                       <nav class="navbar navbar-default">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -60,6 +60,6 @@
             <div ui-view="login"></div>
 
           
-          <a id="down_button" href="#news"><img id="downImage" src="assets/down_btn.png" class="img-responsive"></a>
+          <img id="down_button" ng-click="scrollToAnchor('news')" src="assets/down_btn.png" class="img-responsive">
               
     </div> <!--upper row -->

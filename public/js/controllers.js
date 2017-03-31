@@ -19,7 +19,7 @@ angular.module('kiddsapp.controllers', [])
     $scope.doLogOut = function () {
         userFactory.logout();
     }
-    $scope.testOperationPopoverContent = $sce.trustAsHtml('<div><h4>Сайт працює в тестовому режимі!</h4><p>Радимо залогінитись, щоб оцінити всі функції цього сайту:<br>Ім\'я користувача: <strong>Admin</strong><br> Пароль: <strong>аdmin</strong><br></p></div>');
+    $scope.testOperationPopoverContent = $sce.trustAsHtml('<div><h4 class="testop-popover-header">Сайт працює в тестовому режимі!</h4><p>Радимо залогінитись, щоб оцінити всі функції цього сайту:<br>Ім\'я користувача: <strong>Admin</strong><br> Пароль: <strong>аdmin</strong><br></p></div>');
 }])
 
 .controller('indexController', ['$scope', '$state', '$uibModal', 'userFactory', '$anchorScroll', '$location', 'scrollTo', function($scope, $state, $uibModal, userFactory, $anchorScroll, $location, scrollTo){
