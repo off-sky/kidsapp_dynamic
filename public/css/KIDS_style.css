@@ -561,6 +561,9 @@ td strong {
 
 }
 
+.testop-popover-par {
+    margin: 0px 0px 0px 0px;
+}
 
 
 .upper_row {
@@ -971,7 +974,7 @@ td strong {
     .upper_row {
         position: relative;
         width: 100%;
-        min-height: 600px;
+        min-height: 650px;
         background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1175,7 +1178,7 @@ td strong {
     .upper_row {
         position: relative;
         width: 100%;
-        min-height: 700px;
+        min-height: 750px;
         background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1188,7 +1191,7 @@ td strong {
     .upper_row {
         position: relative;
         width: 100%;
-        min-height: 800px;
+        min-height: 850px;
         background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1201,7 +1204,7 @@ td strong {
     .upper_row {
         position: relative;
         width: 100%;
-        min-height: 900px;
+        min-height: 950px;
         background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1214,7 +1217,7 @@ td strong {
     .upper_row {
         position: relative;
         width: 100%;
-        min-height: 1150px;
+        min-height: 1200px;
         background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -1227,7 +1230,7 @@ td strong {
     .upper_row {
         position: relative;
         width: 100%;
-        min-height: 1700px;
+        min-height: 1750px;
         background: #b3e7ff url('../assets/ship_ensemble_res.png') no-repeat center center; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
